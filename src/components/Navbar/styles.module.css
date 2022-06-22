@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companyContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: rotate(1turn);
+    transition: ease-in-out 1.5s;
+}
+
+.companyName {
+    font-size: 24px;
+}
+
+.list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.listItem {
+    cursor: pointer;
+    padding: 14px 39px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+
+.listItem:hover {
+    border-color: #FFFFFF;
+    transition: 0.2s ease-in-out;
+}
+
+.listItem a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.button {
+    border: 1px solid;
+    font-size: 14px;
+    border-color: #ffffff29;
+    border-radius: 6px;
+    padding: 14px 39px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #FFFFFF;
+    color: #28293E;
+    transition: 0.2s ease-in-out;
+}

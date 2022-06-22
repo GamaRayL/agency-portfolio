@@ -1,0 +1,31 @@
+.card {
+    display: flex;
+    align-items: flex-end;
+    width: 370px;
+    height: 416px;
+}
+
+.img {
+    position: absolute;
+}
+
+.container {
+    position: relative;
+    margin-left: 48px;
+    margin-bottom: 53px;
+}
+
+.category {
+    cursor: pointer;
+    color: #391400;
+    background-color: #FFFFFF;
+    padding: 8px 14px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    max-width: fit-content;
+}
+
+.name {
+    color: #FFFFFF;
+    font-size: 40px;
+}

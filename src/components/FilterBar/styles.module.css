@@ -1,0 +1,25 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 75px;
+}
+
+.item {
+    display: none;
+}
+
+.item:checked + .itemText {
+    color: #16CD53;
+}
+
+.itemText {
+    color: #39140099;
+    cursor: pointer;
+}
+
+.itemText:hover {
+    color: #000000;
+    transition: 0.2s ease-in-out;
+}
