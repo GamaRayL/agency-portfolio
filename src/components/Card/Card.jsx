@@ -9,13 +9,9 @@ export const Card = ({
   category,
   img,
 }) => {
-  const [isBorder, setIsBorder] = useState(false);
+  const [isBorder, setIsBorder] = useState();
   const sendCategory = (e) => {
     setIsCategory(e.target.id);
-  };
-
-  const setData = () => {
-    setIsBorder(!isBorder);
   };
 
   return (
@@ -24,10 +20,14 @@ export const Card = ({
       onKeyDown={(e) =>
         isBorder ? (e.code === "Delete" ? removeCard(id) : null) : null
       }
-      className={isBorder ? css.bordered : css.card}
-      onClick={() => setData(id)}
+      className={`${css.card} ${isBorder ? css.bordered : ""}`}
     >
-      <img className={css.img} src={`./images/${img}`} alt="card" />
+      <img
+        className={css.img}
+        onClick={() => setIsBorder(!isBorder)}
+        src={`./images/${img}`}
+        alt="card"
+      />
       <div className={css.container}>
         <p id="log"></p>
         <div

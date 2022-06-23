@@ -1,9 +1,8 @@
-.filter {
+.radioFilter {
     display: flex;
     justify-content: space-between;
     width: 600px;
-    margin: 0 auto;
-    margin-bottom: 75px;
+    margin: 80px 0 75px 0;
 }
 
 .item {
@@ -22,4 +21,45 @@
 .itemText:hover {
     color: #000000;
     transition: 0.2s ease-in-out;
+}
+
+select::-ms-expand { display: none; }
+
+.selectFilter {
+    display: none;
+    margin: 32px 0 48px 0;
+    min-width: 770px;
+    color: #39140099;
+    font-size: 16px;
+    height: 48px;
+    border: 1px solid #F3D1BF;
+    border-radius: 6px;
+    padding: 14px 16px;
+    outline: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23EF6D58' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+    -webkit-appearance: none;
+}
+
+
+
+
+@media screen and (max-width: 1040px) {
+    .radioFilter {
+        display: none;
+    }
+
+    .selectFilter {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 806px) {
+    .selectFilter {
+        min-width: 370px;
+    }
+
 }

@@ -7,6 +7,7 @@ function App() {
   const [array, setArray] = useState(elements);
   const [maxElements, setMaxElements] = useState(9);
   const [isCategory, setIsCategory] = useState();
+
   const arraySlice = array.slice(0, maxElements);
 
   const filtredArray =
@@ -26,6 +27,7 @@ function App() {
     <div className={css.app}>
       <Header />
       <Main
+
         removeCard={removeCard}
         setIsCategory={setIsCategory}
         filtredArray={filtredArray}
