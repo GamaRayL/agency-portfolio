@@ -2,6 +2,7 @@ import css from "./styles.module.css";
 import { Card, FilterBar } from "components";
 
 export const Main = ({
+  removeCard,
   setIsCategory,
   changeAmount,
   filtredArray,
@@ -14,7 +15,12 @@ export const Main = ({
         <div className={css.container}>
           <div className={css.box}>
             {filtredArray.map((item) => (
-              <Card setIsCategory={setIsCategory} key={item.id} {...item} />
+              <Card
+                removeCard={removeCard}
+                setIsCategory={setIsCategory}
+                key={item.id}
+                {...item}
+              />
             ))}
           </div>
           <div className={css.button} onClick={changeAmount}>

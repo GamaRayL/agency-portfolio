@@ -2,8 +2,7 @@ import css from "./styles.module.css";
 
 export const FilterBar = ({ setIsCategory }) => {
   const sendCategory = (e) => {
-    const id = e.target.id;
-    setIsCategory(id);
+    setIsCategory(e.target.id);
   };
 
   return (
