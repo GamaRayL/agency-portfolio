@@ -2,7 +2,8 @@ import css from "./styles.module.css";
 import { Card, FilterBar } from "components";
 
 export const Main = ({
-  removeCard,
+  stateId,
+  setStateId,
   setIsCategory,
   changeAmount,
   filtredArray,
@@ -16,7 +17,8 @@ export const Main = ({
           <div className={css.box}>
             {filtredArray.map((item) => (
               <Card
-                removeCard={removeCard}
+                stateId={stateId}
+                setStateId={setStateId}
                 setIsCategory={setIsCategory}
                 key={item.id}
                 {...item}
