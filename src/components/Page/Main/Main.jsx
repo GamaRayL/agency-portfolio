@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Card, FilterBar } from "components";
+import { Card, FilterBar, Modal } from "components";
 import elements from "store/elements.json";
 import arOptions from "store/options.json";
 import css from "./styles.module.css";
@@ -11,6 +11,7 @@ export const Main = () => {
   const [cardId, setCardId] = useState([]);
   const [options, setOptions] = useState(arOptions);
   const [isLoading, setIsLoading] = useState(false);
+  const [isModal, setIsModal] = useState(true);
 
   const onSumbitCategory = (eCategory) => {
     setOptions(
@@ -56,6 +57,7 @@ export const Main = () => {
   return (
     <main className={css.main}>
       <div className={css.wrapper}>
+        <Modal isModal={isModal} setIsModal={setIsModal} />
         <FilterBar options={options} onClick={onSumbitCategory} />
         <div className={css.container}>
           <div className={css.box}>
