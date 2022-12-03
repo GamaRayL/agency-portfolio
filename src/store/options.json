@@ -1,0 +1,7 @@
+[
+  { "category": "All", "value": "Show All", "selected": true },
+  { "category": "Design", "value": "Design", "selected": false },
+  { "category": "Branding", "value": "Branding", "selected": false },
+  { "category": "Illustration", "value": "Illustration", "selected": false },
+  { "category": "Motion", "value": "Motion", "selected": false }
+]
