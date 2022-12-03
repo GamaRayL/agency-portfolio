@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #FDF0E9;
   font-family: "Epilogue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -7,4 +8,8 @@ body {
 
 .app {
   margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

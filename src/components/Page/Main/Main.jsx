@@ -10,6 +10,7 @@ export const Main = () => {
   const [category, setCategory] = useState("All");
   const [cardId, setCardId] = useState([]);
   const [options, setOptions] = useState(arOptions);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSumbitCategory = (eCategory) => {
     setOptions(
@@ -20,6 +21,11 @@ export const Main = () => {
       )
     );
     eCategory === "Show All" ? setCategory("All") : setCategory(eCategory);
+
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   const removeSelectedCards = useCallback(
@@ -53,16 +59,20 @@ export const Main = () => {
         <FilterBar options={options} onClick={onSumbitCategory} />
         <div className={css.container}>
           <div className={css.box}>
-            {filtredCards.map((item) => (
-              <Card
-                cardId={cardId}
-                setCardId={setCardId}
-                setCategory={setCategory}
-                onClick={onSumbitCategory}
-                key={item.id}
-                {...item}
-              />
-            ))}
+            {isLoading ? (
+              <div className={css.loader}></div>
+            ) : (
+              filtredCards.map((item) => (
+                <Card
+                  cardId={cardId}
+                  setCardId={setCardId}
+                  setCategory={setCategory}
+                  onClick={onSumbitCategory}
+                  key={item.id}
+                  {...item}
+                />
+              ))
+            )}
           </div>
           <div className={css.button} onClick={onSubmitElement}>
             {maxElements <= 9 ? "LOAD MORE" : "RETURN"}
