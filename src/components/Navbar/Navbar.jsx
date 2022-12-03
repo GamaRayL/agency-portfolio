@@ -3,6 +3,8 @@
 import css from "./styles.module.css";
 
 export const Navbar = () => {
+  const arValues = ["About", "Services", "Pircing", "Blog"];
+
   return (
     <div className={css.navbar}>
       <div className={css.companyContainer}>
@@ -12,18 +14,11 @@ export const Navbar = () => {
         <span className={css.companyName}>Agency</span>
       </div>
       <ul className={css.list}>
-        <li className={css.listItem}>
-          <a href="#">About</a>
-        </li>
-        <li className={css.listItem}>
-          <a href="#">Services</a>
-        </li>
-        <li className={css.listItem}>
-          <a href="#">Pircing</a>
-        </li>
-        <li className={css.listItem}>
-          <a href="#">Blog</a>
-        </li>
+        {arValues.map((i) => (
+          <li key={i} className={css.listItem}>
+            <a href="#">{i}</a>
+          </li>
+        ))}
       </ul>
       <div className={css.button}>CONTACT</div>
     </div>
