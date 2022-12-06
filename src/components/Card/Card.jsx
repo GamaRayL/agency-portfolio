@@ -8,7 +8,7 @@ export const Card = (props) => {
   const [modalActive, setIsModalActive] = useState(false);
   const [isHover, setIsHover] = useState(false);
 
-  const onSubmitInclude = (id) => {
+  const onSubmitCheck = (id) => {
     cardId.includes(id)
       ? setCardId([...cardId.filter((item) => item !== id)])
       : setCardId([...cardId, id]);
@@ -53,7 +53,7 @@ export const Card = (props) => {
             className={css.checkmark}
             id={id}
             type="checkbox"
-            onChange={() => onSubmitInclude(id)}
+            onChange={() => onSubmitCheck(id)}
           />
           <label
             htmlFor={id}
