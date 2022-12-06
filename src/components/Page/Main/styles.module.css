@@ -1,5 +1,5 @@
 .main {
-  padding: 0 10px;
+  padding: 0 26px;
 }
 
 .wrapper {
@@ -14,9 +14,10 @@
 .box {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 26px;
   flex-wrap: wrap;
   margin-bottom: 80px;
+  width: 100%;
 }
 
 .container {
@@ -43,6 +44,15 @@
   transition: 0.2s ease-in-out;
 }
 
+@media screen and (max-width: 1040px) {
+  .container {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+/* Loader */
+
 .loader {
   width: 48px;
   height: 48px;
@@ -59,7 +69,7 @@
   top: 60px;
   left: 0;
   border-radius: 50%;
-  animation: shadow324 0.5s linear infinite;
+  animation: shadow 0.5s linear infinite;
 }
 
 .loader:after {
@@ -71,10 +81,10 @@
   top: 0;
   left: 0;
   border-radius: 4px;
-  animation: jump7456 0.5s linear infinite;
+  animation: jump 0.5s linear infinite;
 }
 
-@keyframes jump7456 {
+@keyframes jump {
   15% {
     border-bottom-right-radius: 3px;
   }
@@ -97,7 +107,7 @@
   }
 }
 
-@keyframes shadow324 {
+@keyframes shadow {
 
   0%,
     100% {

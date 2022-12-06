@@ -1,3 +1,36 @@
+/* Modal */
+.modalCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: right;
+  padding: 8px;
+  max-width: 600px;
+}
+
+.modalTitle {
+  margin: 0;
+  color: #391400;
+  margin-bottom: 40px;
+}
+
+.modalImage {
+  pointer-events: none;
+}
+
+.modalDeleteIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modalDeleteIcon:hover {
+  transform: rotate(90deg);
+}
+
+/* Card */
 .card {
   display: flex;
   align-items: flex-end;
@@ -7,16 +40,71 @@
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  position: relative;
+  border-radius: 18px;
+}
+
+.modalContent {
+  color: #39140096;
 }
 
 .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   pointer-events: none;
 }
 
-.bordered {
-  box-shadow: 0 0 0 7px #4FE24A;
-  border-radius: 6px;
+.bookmark {
+  color: #fff;
+  display: flex;
+  height: 20px;
+  width: 26px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 1;
+  transition: 0.3s ease;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.bookmark:before{
+  content: '';
+  display: block;
+}
+
+.bookmark:before {
+  bottom: -50%;
+  height: 240%;
+  width: 100%;
+  background-image:
+    linear-gradient(
+      -45deg,
+      transparent 50%,
+      #fff 50%),
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #fff 50%);
+}
+
+.bookmark:hover {
+  height: 36px;
+}
+
+.checkmark {
+  display: none;
+}
+
+.checkmark:checked + .bookmark {
+  height: 32px;
+}
+
+.bookmarkActive {
+  height: 28px;
+  opacity: 1;
 }
 
 .container {
@@ -32,14 +120,56 @@
   border-radius: 16px;
   margin-bottom: 16px;
   max-width: fit-content;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .category:hover {
   transform: translateY(4px)
 }
 
-.name {
+.title {
   color: #FFFFFF;
   font-size: 40px;
+}
+
+
+@media screen and (max-width: 1040px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }
+  .container {
+    margin-top: 53px;
+  }
+  .modalImage {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .modalTitle {
+    font-size: 20px;
+  }
+  .modalContent {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .modalImage {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .modalImage {
+    display: none;
+  }
+  .modalCard {
+    align-items: center;
+    text-align: center;
+  }
+  .modalTitle {
+    margin-bottom: 10px;
+  }
 }

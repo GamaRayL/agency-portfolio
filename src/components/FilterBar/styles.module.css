@@ -27,10 +27,9 @@ select::-ms-expand {
 .altBar {
   display: none;
   margin: 32px 0 48px 0;
-  min-width: 770px;
+  width: 100%;
   color: #39140099;
   font-size: 16px;
-  height: 48px;
   border: 1px solid #F3D1BF;
   border-radius: 6px;
   padding: 14px 16px;
@@ -49,11 +48,5 @@ select::-ms-expand {
   }
   .altBar {
     display: block;
-  }
-}
-
-@media screen and (max-width: 806px) {
-  .bar {
-    min-width: 370px;
   }
 }
